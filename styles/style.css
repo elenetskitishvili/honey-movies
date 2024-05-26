@@ -1,0 +1,564 @@
+/************************/
+/*    Reusable Styles   */
+/************************/
+
+body {
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  display: block;
+  top: 31%;
+  left: 26%;
+  width: 70rem;
+  height: 60rem;
+  transform: translate(-50%, -50%) rotate(120deg);
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.45) 50%,
+      rgba(0, 0, 0, 1) 100%
+    ),
+    url("../images/HoneyCombBackground.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: -1; /* in order to be behind other content */
+}
+
+.container {
+  max-width: 120rem;
+  padding: 0 3.2rem;
+  margin: 0 auto;
+}
+
+/************************/
+/*      HEADER      */
+/************************/
+
+.header {
+  height: 14rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/************************/
+/*      LOGO      */
+/************************/
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img {
+  height: 6rem;
+}
+.logo-name {
+  font-family: "Luckiest Guy", sans-serif;
+  font-size: 3.2rem;
+  line-height: 3.2rem;
+  color: var(--primary-col);
+}
+
+/************************/
+/*      NAVIGATION      */
+/************************/
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 5rem;
+}
+
+.nav-link:link,
+.nav-link:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: #fff;
+  padding: 1.8rem;
+  font-family: "Lato", sans-serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 2.4rem;
+  transition: all 0.3s ease;
+}
+
+.nav-link.nav-link--active {
+  color: var(--primary-col);
+  border-bottom: 4px solid var(--primary-col);
+}
+
+.nav-link.nav-link--thin {
+  font-weight: 600;
+}
+
+/************************/
+/*      SEARCH       */
+/************************/
+
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+  background-color: #21242d;
+  padding: 1.6rem 2.5rem;
+  border-radius: var(--border-radius-sm);
+  position: relative;
+}
+
+.icon-search,
+.icon-filter {
+  color: var(--light-col);
+  font-size: 2.4rem;
+}
+
+.icon-filter {
+  font-size: 2rem;
+}
+
+#search::placeholder {
+  font-size: 18px;
+  color: var(--light-col);
+}
+
+#search {
+  background-color: #21242d;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 18px;
+  width: 200px;
+  height: 40px;
+}
+
+.submit-btn {
+  border: none;
+  background-color: none;
+}
+
+/* ///////////////////////// */
+/*         Page Layout       */
+/* ///////////////////////// */
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "aside carousel"
+    "aside movies";
+  gap: 3rem;
+
+  margin-top: 3rem;
+  margin-bottom: 15rem;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+.carousel-section {
+  grid-area: carousel;
+}
+
+.movies-section {
+  grid-area: movies;
+}
+
+/************************/
+/*   Carousel Section   */
+/************************/
+
+.carousel-section {
+  max-width: 77rem;
+  max-height: 35rem;
+  position: relative;
+  margin-bottom: 15rem;
+}
+
+.carousel-arrow {
+  width: 5rem;
+  height: 5rem;
+  background-color: var(--light-col);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--border-radius-md);
+}
+
+.arrow {
+  display: inline-block;
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+.carousel-img {
+  filter: brightness(55%);
+  border-radius: var(--border-radius-big);
+}
+
+.carousel-inner {
+  border-radius: var(--border-radius-big);
+  overflow: hidden;
+}
+
+.btn-watchlist {
+  padding: 1.9rem 2.5rem;
+  position: absolute;
+  left: 2rem;
+  bottom: 2.1rem;
+}
+
+.btn-watch {
+  padding: 1.9rem 4.7rem;
+  position: absolute;
+  right: 2rem;
+  bottom: 2.1rem;
+}
+
+.carousel-title {
+  font-size: 4.8rem;
+  color: var(--text-light-grey);
+  font-weight: 800;
+  position: absolute;
+  top: 4rem;
+  left: 4rem;
+}
+
+/************************/
+/*    Movies Section    */
+/************************/
+.heading-secondary {
+  font-weight: 800;
+  color: #fff;
+}
+
+.heading-movies {
+  font-size: 3rem;
+  margin-bottom: 3rem;
+}
+
+.movies-container {
+  display: flex;
+  gap: 3rem;
+}
+
+.movie {
+  width: 23.7rem;
+  height: 29.8rem;
+  background-size: cover;
+  background-position: 90% 0%;
+  border-radius: var(--border-radius-big);
+  position: relative;
+  cursor: pointer;
+}
+
+.movie-loki {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+    url("../images/loki.jpg");
+}
+.movie-chernobyl {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+    url("../images/chernobyl.jpg");
+}
+.movie-rickandmorty {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)),
+    url("../images/rickandmorty.jpg");
+  background-position: 60% 0%;
+}
+
+.movie-name,
+.stars {
+  margin-left: 2.1rem;
+}
+
+.movie-name {
+  font-size: 2.4rem;
+  font-weight: 800;
+  color: var(--text-light-grey);
+  margin-top: 2.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.stars {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.star {
+  font-size: 1.8rem;
+  color: var(--primary-col);
+}
+
+.btn-add,
+.btn-more {
+  position: absolute;
+  bottom: 1rem;
+}
+
+.btn-add {
+  font-size: 1.8rem;
+  background-color: rgba(249, 249, 249, 0.35);
+  padding: 1.4rem 2rem;
+  left: 1rem;
+}
+
+.btn-more {
+  right: 1rem;
+  padding: 1.4rem 3.6rem;
+}
+
+.light-text {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: rgba(249, 249, 249, 0.7);
+}
+
+.episodes,
+.genre {
+  position: absolute;
+  bottom: 7rem;
+  margin: 0;
+}
+
+.episodes {
+  left: 1rem;
+}
+
+.genre {
+  right: 1rem;
+}
+
+/************************/
+/*         ASIDE        */
+/************************/
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  max-width: 24.5rem;
+}
+
+.aside-heading {
+  cursor: pointer;
+  margin-bottom: 1.6rem;
+  color: rgba(249, 249, 249, 0.5);
+}
+
+.aside-nav-list {
+  list-style: none;
+}
+
+.aside-nav-link:link,
+.aside-nav-link:visited {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1.8rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 20rem;
+  height: 4.5rem;
+  transition: all 0.2s ease;
+}
+
+.aside-nav-link:hover,
+.aside-nav-link:active {
+  color: var(--primary-col);
+  border-right: 2px solid var(--primary-col);
+}
+
+/************************/
+/*   TOP RATED MOVIES   */
+/************************/
+.section-top-rated-movies {
+  margin-bottom: 7.5rem;
+}
+.heading-top-rated-movies {
+  font-size: 4.8rem;
+  margin-bottom: 7rem;
+}
+
+.cards-container {
+  max-width: 106.5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3rem;
+}
+
+.card {
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  background-color: #000;
+  color: #fff;
+  position: relative;
+}
+
+.movie-img {
+  width: 100%;
+  height: 34rem;
+}
+
+.card-content {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.movie-title {
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.date-release,
+.desc-short {
+  font-weight: 400;
+}
+
+.date-release {
+  font-size: 1.8rem;
+}
+
+.desc-short {
+  font-size: 1.6rem;
+}
+
+.btn-show-more {
+  display: block;
+  padding: 2rem 4rem;
+  margin: 5rem auto;
+}
+
+.label-rating {
+  position: absolute;
+  right: 0;
+  top: 0;
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #000;
+  background-color: var(--primary-col);
+  padding: 0.5rem 2.5rem;
+  border-radius: 0 var(--border-radius-md) 0 var(--border-radius-md);
+}
+
+/************************/
+/*        FOOTER        */
+/************************/
+
+.footer {
+  margin-bottom: 7rem;
+}
+
+.footer-text {
+  font-family: "Luckiest Guy", sans-serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: var(--primary-col);
+  text-align: center;
+}
+
+/************************/
+/*    SEARCH RESULTS    */
+/************************/
+.movie-list {
+  list-style-type: none;
+  padding: 2.4rem;
+  position: absolute;
+  top: 9rem;
+  z-index: 99999;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: var(--border-radius-md);
+}
+
+.movie-item {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  padding-bottom: 3rem;
+  border-bottom: 2px solid #fff;
+}
+
+.movie-title {
+  transition: color 0.2s ease;
+}
+
+.movie-link:link,
+.movie-link:hover {
+  text-decoration: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.movie-link:hover .movie-title {
+  color: var(--primary-col);
+}
+
+.movie-link:hover .movie-heading {
+  color: #fff;
+}
+
+.movie-item img {
+  width: 100px;
+  height: auto;
+  margin-right: 10px;
+  border-radius: var(--border-radius-sm);
+}
+
+.movie-item .movie-title {
+  font-size: 16px;
+  color: #fff;
+}
+
+/*****************************/
+/*  TOP RATED MOVIE DETAILS  */
+/*****************************/
+
+.section-movie-details {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.movie-details {
+  max-width: 100rem;
+  display: flex;
+  align-items: center;
+  gap: 10rem;
+  font-size: 1.8rem;
+}
+
+.movie-poster {
+  max-width: 30rem;
+}
+
+.title {
+  font-size: 4.8rem;
+}
+
+.movie-poster img {
+  width: 100%;
+}
+
+.no-results-message {
+  color: hsla(0, 0%, 98%, 0.623);
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 0 3rem;
+}
+.movie-link-col {
+  transition: all 0.2s ease;
+}
+
+.movie-link-col:hover {
+  transform: scale(100.5%);
+}
