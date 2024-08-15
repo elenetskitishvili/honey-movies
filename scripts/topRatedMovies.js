@@ -1,7 +1,5 @@
 "use strict";
 
-// const KEY = "4c17820f";
-// const API_URL = "http://www.omdbapi.com/";
 const searchQuery = "harry potter";
 let searchResults = [];
 let currentDisplayedCount = 0;

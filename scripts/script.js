@@ -1,7 +1,7 @@
 "use strict";
 
 const KEY = "4c17820f";
-const API_URL = "http://www.omdbapi.com/";
+const API_URL = "https://www.omdbapi.com/";
 const searchInput = document.getElementById("search");
 const movieList = document.getElementById("movie-list");
 
